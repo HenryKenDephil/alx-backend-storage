@@ -1,6 +1,8 @@
 --old school band
 --script that lists all bands with glam rock
 
-SELECT band_name, IFNULL(split, ' ,  '), 
-SUM(lifespan) formed as lifespan,FROM metal_band WHERE style = 'Glam Rock',
-RANK() OVER (ORDER BY lifespan DESC), FROM metal_bands;
+SELECT band_name,
+  COALESCE(split, 2022) - formed as lifespan
+FROM metal_bands
+WHERE style LIKE '%Glam rock%'
+ORDER BY lifespan DESC;
