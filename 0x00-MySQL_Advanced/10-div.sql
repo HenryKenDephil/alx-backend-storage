@@ -3,18 +3,17 @@
 --divides and returns the first by second
 --number or returns 0 if second number is equal to 0
 
-CREATE FUNCTION safeDive(a int, b INT) 
+CREATE FUNCTION safeDive(a INT, b INT) 
 DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT)
 RETURNS FLOAT DETERMINISTIC
 BEGIN
-    IF (b = 0)
-    THEN
-        RETURN (0);
-    ELSE
-        RETURN (a / b);
-    END IF;
-END
-$$ 
-DELIMITER ;
-
+	DECLARE result FLOAT;
+	IF b = 0 THEN
+		RETURN 0;
+        END IF;
+        SET result = (a * 1.0) / b;
+        RETURN result;
+END;
+$$
+DELIMITER;

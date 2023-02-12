@@ -8,4 +8,4 @@ WHERE
     score < 80 AND 
     (last_meeting IS NULL 
         OR 
-    last_meeeting < ADDATE(CURDATE(), interval -1 MONTH));
+    last_meeeting < DATE(CURDATE() - NTERVAL 1 MONTH));
