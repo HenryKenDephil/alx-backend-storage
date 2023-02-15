@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 #change school topics
+import pymongo
 
 def update_topics(mongo_collection, name, topics):
     '''python function that changes

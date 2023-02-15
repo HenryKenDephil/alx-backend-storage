@@ -1,4 +1,4 @@
 // delete by match
 // a script that deletes all documents with name
 
-db.school.remove({name: "Holbberton school"});
+db.school.deleteMany({name: "Holberton school"})

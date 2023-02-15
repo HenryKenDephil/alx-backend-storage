@@ -1,6 +1,8 @@
 // a script that displays the number 
 // of documents that in the collection
 
-use my_db;
+//use my_db;
 
-db.school.find({key: 1}).count();
+//db.school.find({key: 1}).count();
+
+db.school.count()

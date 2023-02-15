@@ -1,9 +1,14 @@
 // update
 // script that adds a new attribbute to document collection
 
-use my_db;
+//use my_db;
+
+//db.school.update(
+  //  {"name": "Holberton school"},
+   // {"addresses": "972 Mission street"}
+//);
 
 db.school.update(
-    {"name": "Holberton school"},
-    {"addresses": "972 Mission street"}
-);
+	{name:"Holberton school"},
+	{$set: {address: "972 Mission street"}},
+	{ multi: true })
